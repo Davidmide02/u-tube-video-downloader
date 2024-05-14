@@ -1,13 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Youtube downloader</title>
-</head>
-<body>
-    <h1>Video downlaoder</h1>
-    <h3>Here</h3>
-    <p>Download your youtube videos here for free</p>
-</body>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        background-color: rgb(4, 1, 36);
+      }
+      section {
+        background-color: rgb(4, 1, 36);
+        color: aliceblue;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+      }
+      header {
+        padding: 2rem;
+      }
+
+      .container{
+        padding: 2rem;
+      }
+      ol{
+        line-height: 2rem;
+        color:rgb(185, 185, 185);
+      }
+      ol h3{
+        color: aliceblue;
+      }
+
+      form{
+        padding: 1rem;
+      }
+
+      .input{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /* background-color: green; */
+        /* width: 100%; */
+      }
+      #link{
+        padding: .5rem;
+        width: 100%;
+        outline: none;
+        border: none;
+        border-radius: 0.4rem;
+        margin: 0.7rem 0rem;
+      }
+
+      #link:focus{
+        outline: 4px solid rgb(206, 204, 204);
+      }
+
+      .btn-container{
+        text-align: center;
+        /* background-color: red; */
+        margin-top: 1rem;
+        padding: 1rem;
+      }
+      .btn{
+        color: rgb(4, 1, 36);
+        font-weight: 700;
+        cursor: pointer;
+        background-color: aliceblue;
+        outline: none;
+        padding: 0.4rem 1rem;
+        border: none;
+        border-radius: 0.4rem;
+      }
+
+      .btn:hover{
+        background-color: rgb(185, 185, 185);
+      }
+
+    </style>
+  </head>
+  <body>
+    <section>
+      <header>
+        <h1>YouTube video downlaoder</h1>
+      </header>
+
+      <main>
+
+        <div class="container">
+          <h3>Download YouTube videos here for free</h3>
+        </div>
+
+        <ol>
+          <h3>Steps to download video</h3>
+          <li>Copy the video link from YouTube</li>
+          <li>Paste it in the input field below</li>
+          <li>Click the download button</li>
+          <li>The progress will start loading</li>
+          <li>You'll get a success message once the donlaod is completed</li>
+        </ol>
+
+        <form action="/" method="post">
+          <div class="input">
+            <label for="url">YouTube link:</label>
+            <input type="url" name="url" id="link" placeholder="input video url" required/>
+          </div>
+          <div class="btn-container">
+            <input type="submit" value="Download" class="btn" id="btn" />
+            <!-- <button type="submit">Download</button> -->
+          </div>
+        </form>
+      </main>
+    </section>
+  </body>
+  <script>
+    const link = document.querySelector('#link')
+    const link2 = document.getElementById('link')
+    console.log(link.value)
+    console.log(link2);
+    const btn = document.querySelector('#btn')
+    btn.addEventListener('click', ()=>{
+        console.log('clicked',link.value)
+        // link.value = ''
+    })
+  </script>
 </html>
